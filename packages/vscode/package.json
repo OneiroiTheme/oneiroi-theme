@@ -1,0 +1,26 @@
+{
+  "name": "oneiroi",
+  "displayName": "Oneiroi",
+  "description": "A beautiful theme for vscode.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.47.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zygoCrystar/oneiroi-theme.git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "oneiroi dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/oneiroi-dark-color-theme.json"
+      }
+    ]
+  }
+}
