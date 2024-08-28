@@ -35,6 +35,9 @@
           "foreground": "p:tag",
           "style": "plain",
           "template": "[<p:type>\ue235{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ end }}</>]",
+          "properties": {
+            "home_enabled": true
+          },
           "type": "python"
         },
         {
