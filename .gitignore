@@ -1,2 +1,4 @@
 _images
 _packages
+_test
+/node_modules
