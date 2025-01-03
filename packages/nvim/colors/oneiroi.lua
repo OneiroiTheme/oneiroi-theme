@@ -1,2 +1,2 @@
-local oneiroi = require('oneiroi')
+local oneiroi = require("oneiroi")
 oneiroi.load()

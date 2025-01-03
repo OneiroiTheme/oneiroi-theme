@@ -26,12 +26,14 @@
     --bac2: #282D32;
     --bac3: #1F1D21;
 
-    --war: #FBFB70;
-    --war-s: #BABA70;
-    --suc: #CAFFAA;
-    --suc-s: #8CBA76;
-    --err: #FF2525;
-    --err-s: #BA1B1B;
+    --war: #FFFA6A;
+    --war-s: #AAA746;
+    --suc: #6FFF6A;
+    --suc-s: #4AAA46;
+    --err: #FF6A6F;
+    --err-s: #AA464A;
+    --inf: #6A6FFF;
+    --inf-s: #464AAA;
 
     --primary: var(--red);
     --secondary: var(--yel);
