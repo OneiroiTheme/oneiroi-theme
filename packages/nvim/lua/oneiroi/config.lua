@@ -4,7 +4,7 @@ M.version = "0.0.1"
 
 ---@class oneiroi.config
 M.defaults = {
-  style = "dark", ---@type oneiroi.style
+  style = "dream", ---@type oneiroi.style
   transparent = false,
   italic_comments = false,
   underline_links = false,
