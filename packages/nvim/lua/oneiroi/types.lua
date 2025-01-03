@@ -3,4 +3,4 @@
 
 ---@alias oneiroi.hl table<string,oneiroi.Highlights|string>
 ---@alias oneiroi.hler  fun(c: oneiroi.palette, opts:oneiroi.config):oneiroi.hl
----@alias oneiroi.style "dark" | "base"
+---@alias oneiroi.style "dream" | "base"

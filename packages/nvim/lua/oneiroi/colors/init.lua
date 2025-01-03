@@ -4,8 +4,8 @@ local M = {}
 ---@return oneiroi.palette
 M.setup = function(opts)
     local p ---@type oneiroi.palette
-    if opts.style == 'dark' then
-        p = require("oneiroi.colors.dark")
+    if opts.style == 'dream' then
+        p = require("oneiroi.colors.dream")
     end
 
     return p
