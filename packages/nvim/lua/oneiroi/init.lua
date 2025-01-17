@@ -8,10 +8,6 @@ M.setup = config.setup
 ---@param opts oneiroi.config
 M.load = function(opts)
     opts = require("oneiroi.config").extend(opts)
-    opts.style = "dream"
-
-    -- opts.transparent = true
-
     return require("oneiroi.theme").setup(opts)
 end
 
