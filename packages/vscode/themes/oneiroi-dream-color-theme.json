@@ -148,7 +148,7 @@
 		"terminalCursor.background": "#343A41", //bg
 		"terminal.ansiBlack": "#343A41", //bg
 		"terminal.ansiRed": "#B1768C", //reds
-		"terminal.ansiGreen": "#8CBA76", //gres
+		"terminal.ansiGreen": "#8CB176", //gres
 		"terminal.ansiYellow": "#B19B76", //yels
 		"terminal.ansiBlue": "#768CB1", //blus
 		"terminal.ansiMagenta": "#9B76B1", //purs
@@ -158,7 +158,7 @@
 		"terminal.ansiBrightRed": "#FFAACA", //red
 		"terminal.ansiBrightGreen": "#CAFFAA", //gre
 		"terminal.ansiBrightYellow": "#FFDFAA", //yel
-		"terminal.ansiBrightBlue": "#AACAFA", //blu
+		"terminal.ansiBrightBlue": "#AACAFF", //blu
 		"terminal.ansiBrightMagenta": "#DFAAFF", //pur
 		"terminal.ansiBrightCyan": "#AAFFDF", //aqu
 		"terminal.ansiBrightWhite": "#FFFDEB", //fg
@@ -174,8 +174,8 @@
 		"gitDecoration.deletedResourceForeground": "#FFAACA", //red
 		"gitDecoration.conflictingResourceForeground": "#FFAACA", //red
 		"gitDecoration.ignoredResourceForeground": "#53575B", //com
-		"gitDecoration.untrackedResourceForeground": "#8CBA76", //gres
-		"gitDecoration.submoduleResourceForeground": "#AACAFA", //blu
+		"gitDecoration.untrackedResourceForeground": "#8CB176", //gres
+		"gitDecoration.submoduleResourceForeground": "#AACAFF", //blu
 		//STATUSBAR
 		"statusBar.border": "#1F1D21", //bord
 		"statusBar.noFolderBorder": "#1F1D21", //bord
