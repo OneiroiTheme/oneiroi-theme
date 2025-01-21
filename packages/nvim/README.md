@@ -9,12 +9,13 @@
 ## Themes available
 
 - oneiroi dream
+
 <p align="center">
   <img src="./doc/oneiroi-dream.png" alt="Screenshot" width="80%" />
 </p>
 
-
 - oneiroi melatonin
+
 <p align="center">
   <img src="./doc/oneiroi-melatonin.png" alt="Screenshot2" width="80%" />
 </p>
