@@ -17,7 +17,7 @@
 - oneiroi melatonin
 
 <p align="center">
-  <img src="./doc/oneiroi-melatonin.png" alt="Screenshot2" width="80%" />
+  <img src="./doc/onerioi-melatonin.png" alt="Screenshot2" width="80%" />
 </p>
 
 ## Installation
