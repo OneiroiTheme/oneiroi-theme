@@ -1,17 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "1st": "p:red",
-    "2nd": "p:yellow",
-    "3rd": "p:cyan",
-    "blue": "lightBlue",
+    "1st": "#FB6BB0",
+    "1sts": "#CD5790",
+    "2nd": "#6BFBB6",
+    "3rd": "#FBB66B",
     "closer": "p:blue",
-    "cyan": "lightCyan",
     "os": "p:3rd",
-    "red": "lightRed",
     "tag": "p:3rd",
     "timer": "p:white",
     "type": "p:1st",
+    "cyan": "lightCyan",
+    "blue": "lightBlue",
+    "red": "lightRed",
+    "reds": "red",
     "white": "lightWhite",
     "yellow": "lightYellow"
   },
@@ -24,7 +26,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ .Icon }} ",
+          "template": "[{{ .Icon }}] ",
           "foreground": "p:os",
           "type": "os",
           "style": "plain"
@@ -33,7 +35,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ .UserName }}<p:1st>@</>{{ .HostName }}",
+          "template": "{{ .UserName }}<p:1st>@{{ .HostName }}</>",
           "foreground": "p:2nd",
           "type": "session",
           "style": "plain"
@@ -75,7 +77,7 @@
             "style": "agnoster_short"
           },
           "template": " {{ .Path }} ",
-          "foreground": "p:1st",
+          "foreground": "p:1sts",
           "type": "path",
           "style": "plain"
         },
