@@ -1,11 +1,24 @@
-# Oneiroi for [Visual Studio Code](https://code.visualstudio.com/)
+# Oneiroi theme for [Visual Studio Code](https://code.visualstudio.com/)
+
+> A fantastic theme for `Visual Studio Code`.  
 
 <p align="center">
-  <img src="../../images/Oneiroi_full_2.png" alt="Oneiroi Theme" width="70%" />
+  <img src="./doc/oneiroi.png" alt="Oneiroi Theme" width="70%" />
 </p>
 
-✨A beautiful theme for `Visual Studio Code`.  
+## Themes available
 
+- oneiroi dream
 <p align="center">
-  <img src="../../images/Oneiroi_vscode.png" alt="Screenshot" width="80%" />
+  <img src="./doc/oneiroi-dream.png" alt="Screenshot" width="80%" />
 </p>
+
+
+- oneiroi melatonin
+<p align="center">
+  <img src="./doc/oneiroi-melatonin.png" alt="Screenshot2" width="80%" />
+</p>
+
+## Installation
+
+Hello fantasy world!🎉
