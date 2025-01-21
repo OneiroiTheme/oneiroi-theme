@@ -1,25 +1,36 @@
 {
   "name": "oneiroi",
   "displayName": "Oneiroi",
-  "description": "A beautiful theme for vscode.",
-  "version": "0.0.2",
+  "description": "A fantastic theme for vscode.",
+  "version": "0.0.4",
+  "publisher": "OneiroiTheme",
+  "author": {
+    "name": "AEva",
+    "email": "crystar.z@proton.me"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.47.0"
   },
   "categories": [
     "Themes"
   ],
-  "icon": "logo.png",
+  "icon": "doc/logo.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AEvaCrystar/oneiroi-theme.git"
+    "url": "https://github.com/OneiroiTheme/vscode.git"
   },
   "contributes": {
     "themes": [
       {
         "label": "oneiroi dream",
         "uiTheme": "vs-dark",
-        "path": "./themes/oneiroi-dark-color-theme.json"
+        "path": "./themes/oneiroi-dream-color-theme.json"
+      },
+      {
+        "label": "oneiroi melatonin",
+        "uiTheme": "vs-dark",
+        "path": "./themes/oneiroi-melatonin-color-theme.json"
       }
     ]
   }
