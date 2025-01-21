@@ -1,6 +1,6 @@
 :root {
     --for: #FFFDEB;
-    --com: #5B5B66;
+    --com: #3C3D4E;
     --red: #FB6BB0;
     --ora: #FF6E6B;
     --yel: #FBB66B;
@@ -8,12 +8,12 @@
     --aqu: #6BFBB6;
     --blu: #6BB0FB;
     --pur: #B66BFB;
-    --sel: #222341;
-    --cur: #222341;
+    --sel: #121323;
+    --cur: #121323;
     --bac: #1A1B32;
 
-    --for-s: #BCBBB5;
-    --com-s: #7B7B80;
+    --for-s: #BAB9B3;
+    --com-s: #5F5F69;
     --red-s: #CD5790;
     --ora-s: #CD5957;
     --yel-s: #CD9457;
@@ -23,7 +23,7 @@
     --pur-s: #9457CD;
     --bac-s: #2E3059;
 
-    --bac2: #222341;
+    --bac2: #121323;
     --bac3: #0A0B14;
 
     --war: #FFFA6A;
@@ -39,6 +39,6 @@
     --secondary: var(--aqu);
     --tertiary: var(--yel);
     --quaternary: var(--pur);
-    --senary: var(--blu);
-    --quinary: var(--gre);
+    --quinary: var(--blu);
+    --senary: var(--gre);
 }
