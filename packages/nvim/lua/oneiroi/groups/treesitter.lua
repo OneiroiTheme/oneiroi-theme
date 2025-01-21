@@ -71,7 +71,8 @@ function M.get(c, opts)
         ["@number"]                     = "Number",
         ["@number.float"]               = "Float",
         ["@operator"]                   = "Operator",
-        ["@property"]                   = { fg = c.primary_s },
+        -- ["@property"]                   = { fg = c.primary_s },
+        ["@property"]                   = "Special",
         ["@punctuation.bracket"]        = "Delimiter",
         ["@punctuation.delimiter"]      = "Delimiter",
         -- ["@punctuation.special"]

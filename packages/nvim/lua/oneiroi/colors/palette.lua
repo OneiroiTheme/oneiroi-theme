@@ -33,6 +33,8 @@
 ---@field suc_s color
 ---@field err color
 ---@field err_s color
+---@field inf color;
+---@field inf_s color;
 ---@field primary color ---addition
 ---@field secondary color
 ---@field tertiary color
