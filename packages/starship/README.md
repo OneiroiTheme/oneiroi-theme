@@ -36,7 +36,7 @@
     ```
 
 3. Install starship as follow:
-    <https://starship.rs/installing/>
+    <https://starship.rs/guide/>
 
 4. Enjoy.
 
