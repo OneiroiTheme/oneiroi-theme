@@ -1,0 +1,23 @@
+{
+    "name": "oneiroi dream",
+    "background": "#343A41",
+    "foreground": "#FFFDEB",
+    "selectionBackground": "#282D32",
+    "cursorColor": "#FFAACA",
+    "black": "#343A41",
+    "red": "#B1768C",
+    "green": "#8CB176",
+    "yellow": "#B19B76",
+    "blue": "#768CB1",
+    "purple": "#9B76B1",
+    "cyan": "#76B19B",
+    "white": "#C2C3B8",
+    "brightBlack": "#5A6571",
+    "brightRed": "#FFAACA",
+    "brightGreen": "#CAFFAA",
+    "brightYellow": "#FFDFAA",
+    "brightBlue": "#AACAFF",
+    "brightPurple": "#DFAAFF",
+    "brightCyan": "#AAFFDF",
+    "brightWhite": "#FFFDEB"
+}

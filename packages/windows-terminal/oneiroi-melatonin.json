@@ -1,0 +1,23 @@
+{
+    "name": "oneiroi melatonin",
+    "background": "#1A1B32",
+    "foreground": "#FFFDEB",
+    "selectionBackground": "#121323",
+    "cursorColor": "#FB6BB0",
+    "black": "#1A1B32",
+    "red": "#CD5790",
+    "green": "#90CD57",
+    "yellow": "#CD9457",
+    "blue": "#5790CD",
+    "purple": "#9457CD",
+    "cyan": "#57CD94",
+    "white": "#BAB9B3",
+    "brightBlack": "#2E3059",
+    "brightRed": "#FB6BB0",
+    "brightGreen": "#B0FB6B",
+    "brightYellow": "#FBB66B",
+    "brightBlue": "#6BB0FB",
+    "brightPurple": "#B66BFB",
+    "brightCyan": "#6BFBB6",
+    "brightWhite": "#FFFDEB"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "oneiroi {{name}}",
+    "background": "{{bg}}",
+    "foreground": "{{fg}}",
+    "selectionBackground": "{{sel}}",
+    "cursorColor": "{{prim}}",
+    "black": "{{bg}}",
+    "red": "{{reds}}",
+    "green": "{{gres}}",
+    "yellow": "{{yels}}",
+    "blue": "{{blus}}",
+    "purple": "{{purs}}",
+    "cyan": "{{aqus}}",
+    "white": "{{fgs}}",
+    "brightBlack": "{{bgs}}",
+    "brightRed": "{{red}}",
+    "brightGreen": "{{gre}}",
+    "brightYellow": "{{yel}}",
+    "brightBlue": "{{blu}}",
+    "brightPurple": "{{pur}}",
+    "brightCyan": "{{aqu}}",
+    "brightWhite": "{{fg}}"
+}
