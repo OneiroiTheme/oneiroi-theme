@@ -7,14 +7,14 @@ right_format = """$cmd_duration"""
 
 palette = 'foo'
 [palettes.foo]
-1st = 'bright-red'
-2nd = 'bright-yellow'
-3rd = 'bright-cyan'
-1st-s = 'red'
-com = '#827C8E'
-inf = 'blue'
-suc = 'green'
-err = 'red'
+1st = '#FFAACA'
+2nd = '#FFDFAA'
+3rd = '#AAFFDF'
+1st-s = '#B1768C'
+com = '#53575B'
+inf = '#AACAFA'
+suc = '#6FFF6A'
+err = '#FF6A6F'
 
 [os]
 format = '[\[$symbol\] ](3rd bold)'

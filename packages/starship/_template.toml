@@ -1,0 +1,112 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = '''$os$username$hostname$git_branch$conda$directory$character'''
+right_format = """$cmd_duration"""
+
+palette = 'foo'
+[palettes.foo]
+1st = '{{prim}}'
+2nd = '{{seco}}'
+3rd = '{{tert}}'
+1st-s = '{{prims}}'
+com = '{{com}}'
+inf = '{{quin}}'
+suc = '{{suc}}'
+err = '{{err}}'
+
+[os]
+format = '[\[$symbol\] ](3rd bold)'
+disabled = false
+
+[os.symbols]
+Alpaquita = ""
+Alpine = ""
+AlmaLinux = ""
+Amazon = ""
+Android = ""
+Arch = ""
+Artix = ""
+CachyOS = ""
+CentOS = ""
+Debian = ""
+DragonFly = ""
+Emscripten = ""
+EndeavourOS = ""
+Fedora = ""
+FreeBSD = ""
+Garuda = "󰛓"
+Gentoo = ""
+HardenedBSD = "󰞌"
+Illumos = "󰈸"
+Kali = ""
+Linux = ""
+Mabox = ""
+Macos = ""
+Manjaro = ""
+Mariner = ""
+MidnightBSD = ""
+Mint = ""
+NetBSD = ""
+NixOS = ""
+Nobara = ""
+OpenBSD = "󰈺"
+openSUSE = ""
+OracleLinux = "󰌷"
+Pop = ""
+Raspbian = ""
+Redhat = ""
+RedHatEnterprise = ""
+RockyLinux = ""
+Redox = "󰀘"
+Solus = "󰠳"
+SUSE = ""
+Ubuntu = ""
+Unknown = ""
+Void = ""
+Windows = "󰍲"
+
+[username]
+format = '[$user]($style)'
+style_user = '2nd'
+style_root = '3rd bold'
+show_always = true
+# aliases = { "corpuser034g" = "matchai" }
+
+[hostname]
+format = '[@$hostname$ssh_symbol](bold 1st)'
+ssh_only = false
+ssh_symbol = ""
+
+[directory]
+format = ' [$path]($style)[$read_only]($read_only_style) '
+style = '1st-s bold'
+truncation_length = 3
+truncation_symbol = '…/'
+read_only = ''
+read_only_style = 'err'
+
+[git_branch]
+format = '[\[](3rd)[$symbol$branch(:$remote_branch)]($style)[\]](3rd)'
+style = '1st'
+symbol = ''
+truncation_length = 6
+truncation_symbol = '…'
+
+[conda]
+format = '[\[](3rd)[$symbol$environment]($style)[\]](3rd)'
+symbol = ''
+style = '1st'
+truncation_length = 1
+
+[character]
+success_symbol = "[❯](inf)"
+error_symbol = "[❯](err bold)"
+vimcmd_symbol = "[❮](inf)"
+
+[cmd_duration]
+format = '[$duration]($style)'
+style = 'com'
+min_time = 2_000
+show_milliseconds = true
