@@ -8,7 +8,7 @@ function M.get(c, opts)
 	local vis = c.primary_s
 	local border = c.bg3
 	local borderHL = c.primary
-	local search = c.tertiary_s
+	local search = c.diagInfo
 	local search_h = c.tertiary
 	return {
 		Foo = { fg = c.fg, bg = c.bg },
