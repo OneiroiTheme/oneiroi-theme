@@ -1,0 +1,388 @@
+{
+	"name": "oneiroi dream",
+	"type": "dream",
+	"colors": {
+		//VSCODE
+		"focusBorder": "#1A1C23",
+		"foreground": "{{fg}}", //fg
+		"errorForeground": "{{err}}", //err
+		"widget.shadow": "#0f0f0f",
+		"textLink.foreground": "{{prim}}", //prim
+		"textLink.activeForeground": "{{seco}}", //seco
+		"button.background": "{{secos}}", //secos
+		"button.foreground": "{{bg2}}", //bg2
+		"button.hoverBackground": "{{seco}}", //seco
+		"input.background": "{{bg2}}", //bg2
+		"input.foreground": "{{fg}}", //fg
+		"input.placeholderForeground": "{{com}}", //com
+		"selection.background": "{{prims}}", //prims
+		"dropdown.background": "{{bg2}}", //bg2
+		"dropdown.foreground": "{{fg}}", //fg
+		"badge.background": "{{prims}}", //prims
+		"badge.foreground": "{{bg2}}", //bg2
+		//TITLE
+		"titleBar.border": "{{bord}}", //bord
+		"titleBar.inactiveBackground": "{{bg2}}", //bg2
+		"titleBar.inactiveForeground": "{{com}}", //com
+		"titleBar.activeBackground": "{{bg2}}", //bg2
+		"titleBar.activeForeground": "{{seco}}", //seco
+		"progressBar.background": "{{prim}}", //prim
+		//EDITOR
+		"editor.background": "{{bg}}", //bg
+		"editor.foreground": "{{fg}}", //fg
+		"editorWhitespace.foreground": "{{com}}", //com
+		"editor.selectionBackground": "{{sel}}", //sel
+		"editor.selectionForeground": "{{prim}}", //prim
+		"editor.selectionHighlightBackground": "{{bg3}}84", //bg3+84
+		"editor.inactiveSelectionBackground": "{{bg3}}84", //bg3+84
+		"editor.wordHighlightBackground": "{{bg3}}84", //bg3+84
+		"editor.wordHighlightStrongBackground": "{{bg3}}84", //bg3+84
+		"editor.findMatchBackground": "{{bg3}}84", //bg3+84
+		"editor.findMatchHighlightBackground": "{{bg3}}84", //bg3+84
+		"editor.findRangeHighlightBackground": "{{bg3}}84", //bg3+84
+		"editor.lineHighlightBackground": "{{bg2}}", //bg2
+		"editor.lineHighlightBorder": "#00000000",
+		"editor.focusedStackFrameHighlightBackground": "{{bg2}}", //bg2
+		"editorInlayHint.background": "#00000000",
+		"editorInlayHint.foreground": "{{com}}", //com
+		"editorLink.activeForeground": "{{prim}}", //prim
+		"editorBracketMatch.background": "{{coms}}", //coms
+		"editorError.foreground": "{{err}}", //err
+		"editorError.background": "#00000000",
+		"editorWarning.foreground": "{{war}}", //war
+		"editorWarning.background": "#00000000",
+		"editorGutter.modifiedBackground": "{{yel}}", //yel
+		"editorGutter.addedBackground": "{{gre}}", //gre
+		"editorGutter.deletedBackground": "{{red}}", //red
+		"editorLineNumber.activeForeground": "{{seco}}", //seco
+		"editorLineNumber.foreground": "{{prims}}", //prims
+		"editorCursor.foreground": "{{prim}}", //prim
+		"editorIndentGuide.background1": "{{com}}", //com
+		"editorIndentGuide.activeBackground1": "{{prim}}", //prim
+		"editorBracketHighlight.foreground1": "{{quin}}", //quin
+		"editorBracketHighlight.foreground2": "{{fg}}", //fg
+		"editorBracketHighlight.foreground3": "{{prim}}", //prim
+		"editorBracketHighlight.foreground4": "{{seco}}", //seco
+		"editorBracketHighlight.foreground5": "{{tert}}", //tert
+		"editorBracketHighlight.foreground6": "{{quat}}", //quat
+		//widget
+		"editorWidget.background": "{{bg2}}", //bg2
+		"editorWidget.border": "{{bord}}", //bord
+		"editorSuggestWidget.background": "{{bg2}}", //bg2
+		"editorSuggestWidget.border": "{{bord}}", //bord
+		"editorSuggestWidget.foreground": "{{fgs}}", //fgs
+		"editorSuggestWidget.highlightForeground": "{{fg}}", //fg
+		"editorHoverWidget.background": "{{bg2}}", //bg2
+		"editorHoverWidget.border": "{{bord}}", //bord
+		//group
+		"editorGroup.border": "{{prim}}", //prim
+		"editorGroup.dropBackground": "{{secos}}1c", //secos+1c
+		"editorGroupHeader.tabsBackground": "{{bg2}}", //bg2
+		"tab.border": "{{bord}}", //bord
+		"tab.activeBorderTop": "{{prim}}", //prim
+		"tab.activeBackground": "{{bg}}", //bg
+		"tab.activeForeground": "{{seco}}", //seco
+		"tab.inactiveBackground": "{{bg2}}", //bg2
+		"tab.inactiveForeground": "{{coms}}", //coms
+		"scrollbarSlider.background": "{{bord}}", //bord
+		"scrollbarSlider.hoverBackground": "{{bord}}", //bord
+		"scrollbarSlider.activeBackground": "{{bord}}5F", //bord+5F
+		"tree.indentGuidesStroke": "{{prim}}", //prim
+		//LIST
+		"list.activeSelectionBackground": "{{prims}}", //prims
+		"list.activeSelectionForeground": "{{bg2}}", //bg2
+		"list.activeSelectionIconForeground": "{{bg2}}", //bg2
+		"list.focusBackground": "{{prims}}", //prims
+		"list.focusForeground": "{{bg2}}", //bg2
+		"list.inactiveSelectionBackground": "{{prims}}", //prims
+		"list.inactiveSelectionForeground": "{{bg2}}", //bg2
+		"list.dropBackground": "{{secos}}1c", //secos+1c
+		"list.hoverBackground": "{{bg}}", //bg
+		// "list.hoverForeground": "{{bg2}}", //bg2
+		"list.errorForeground": "{{err}}", //err
+		"list.warningForeground": "{{war}}", //war
+		"list.focusHighlightForeground": "{{fg}}", //fg
+		"list.highlightForeground": "{{prim}}", //prim
+		//ACTIVITYBAR
+		"activityBar.background": "{{bg}}", //bg
+		"activityBar.border": "{{bord}}", //bord
+		"activityBar.foreground": "{{seco}}", //seco
+		"activityBar.activeBorder": "{{prim}}", //prim
+		"activityBar.inactiveForeground": "{{coms}}", //coms
+		"activityBarBadge.background": "{{prim}}", //prim
+		"activityBarBadge.foreground": "{{bg2}}", //bg2
+		//SIDEBAR
+		"sideBar.background": "{{bg2}}", //bg2
+		"sideBar.foreground": "{{fgs}}", //fgs
+		"sideBar.border": "{{bord}}", //bord
+		"sideBar.dropBackground": "{{secos}}1c", //secos+1c
+		"sideBarSectionHeader.foreground": "{{prims}}", //prims
+		"sideBarSectionHeader.background": "{{bg}}", //bg
+		"sideBarSectionHeader.border": "#00000000",
+		"sideBarTitle.foreground": "{{fgs}}", //fgs
+		//EXTENSION
+		"extensionBadge.remoteBackground": "{{seco}}", //seco
+		"extensionBadge.remoteForeground": "{{bg}}", //bg
+		"extensionButton.background": "{{seco}}", //seco
+		"extensionButton.hoverBackground": "{{secos}}", //secos
+		"extensionButton.foreground": "{{bg}}", //bg
+		"extensionButton.separator": "{{bg}}", //bg
+		"extensionButton.prominentForeground": "{{bg}}", //bg
+		"extensionIcon.preReleaseForeground": "{{tert}}", //tert
+		"extensionIcon.sponsorForeground": "{{prims}}", //prims
+		"extensionIcon.starForeground": "{{prims}}", //prims
+		"extensionIcon.verifiedForeground": "{{prims}}", //prims
+		"pickerGroup.foreground": "{{err}}", //err
+		// PANELTITLE
+		"panel.background": "{{bg}}", //bg
+		"panel.border": "{{bord}}", //bord
+		"panelTitle.activeForeground": "{{fg}}", //fg
+		"panelTitle.inactiveForeground": "{{coms}}", //coms
+		"panelTitle.activeBorder": "{{prim}}", //prim
+		//TERMINAL
+		"terminal.border": "{{bord}}", //bord
+		"terminal.background": "{{bg}}", //bg
+		"terminal.foreground": "{{fg}}", //fg
+		"terminal.selectionBackground": "{{sel}}", //sel
+		"terminalCursor.foreground": "{{prims}}", //prims
+		"terminalCursor.background": "{{bg}}", //bg
+		"terminal.ansiBlack": "{{bg}}", //bg
+		"terminal.ansiRed": "{{reds}}", //reds
+		"terminal.ansiGreen": "{{gres}}", //gres
+		"terminal.ansiYellow": "{{yels}}", //yels
+		"terminal.ansiBlue": "{{blus}}", //blus
+		"terminal.ansiMagenta": "{{purs}}", //purs
+		"terminal.ansiCyan": "{{aqus}}", //aqus
+		"terminal.ansiWhite": "{{fgs}}", //fgs
+		"terminal.ansiBrightBlack": "{{bgs}}", //bgs
+		"terminal.ansiBrightRed": "{{red}}", //red
+		"terminal.ansiBrightGreen": "{{gre}}", //gre
+		"terminal.ansiBrightYellow": "{{yel}}", //yel
+		"terminal.ansiBrightBlue": "{{blu}}", //blu
+		"terminal.ansiBrightMagenta": "{{pur}}", //pur
+		"terminal.ansiBrightCyan": "{{aqu}}", //aqu
+		"terminal.ansiBrightWhite": "{{fg}}", //fg
+		//DEBUGCONSLE
+		"debugConsole.errorForeground": "{{err}}", //err
+		"debugConsole.warningForeground": "{{war}}", //war
+		"debugConsole.infoForeground": "{{inf}}", //inf
+		"debugConsole.sourceForeground": "{{infs}}", //infs
+		//GIT
+		"gitDecoration.modifiedResourceForeground": "{{yel}}", //yel
+		"gitDecoration.addedResourceForeground": "{{gre}}", //gre
+		"gitDecoration.renamedResourceForeground": "{{gre}}", //gre
+		"gitDecoration.deletedResourceForeground": "{{red}}", //red
+		"gitDecoration.conflictingResourceForeground": "{{red}}", //red
+		"gitDecoration.ignoredResourceForeground": "{{com}}", //com
+		"gitDecoration.untrackedResourceForeground": "{{gres}}", //gres
+		"gitDecoration.submoduleResourceForeground": "{{blu}}", //blu
+		//STATUSBAR
+		"statusBar.border": "{{bord}}", //bord
+		"statusBar.noFolderBorder": "{{bord}}", //bord
+		"statusBar.noFolderBackground": "{{bg}}", //bg
+		"statusBar.noFolderForeground": "{{fgs}}", //fgs
+		"statusBar.background": "{{prims}}", //prims
+		"statusBar.foreground": "{{bg}}", //bg
+		"statusBar.debuggingBackground": "{{seco}}", //seco
+		"statusBar.debuggingBorder": "{{bord}}", //bord
+		"statusBar.debuggingForeground": "{{bg}}", //bg
+		"statusBarItem.activeBackground": "{{tert}}", //tert
+		"statusBarItem.remoteForeground": "#000000",
+		"statusBarItem.remoteBackground": "{{prims}}" //prims
+	},
+	"tokenColors": [
+		{ //comment
+			"name": "Comment",
+			"scope": "comment",
+			"settings": {
+				"foreground": "{{com}}"
+			}
+		},
+		{ //Identifier
+			"name": "Normal",
+			"scope": [
+				"variable"
+				// "entity",
+			],
+			"settings": {
+				"foreground": "{{fg}}"
+			}
+		},
+		{
+			//Statement,Lable,Keyword,Exception,
+			//Storage,Type(class),Structure,Typedef,Tag,
+			//Special,SpecialChar,SpecialComment,
+			//operator,language,property
+			"name": "primary",
+			"scope": [
+				//statement
+				"statement",
+				"lable",
+				"keyword",
+				"keyword.control.exception",
+				"keyword.control.try",
+				"keyword.control.catch",
+				"keyword.control.throw",
+				//storage
+				"storage",
+				"storage.modifier",
+				"storage.type",
+				"meta.type",
+				"meta.return-type",
+				"support.type",
+				"entity.name.type",
+				"meta.class",
+				"support.class",
+				"entity.name.class",
+				"entity.other.inherited-class",
+				"storage.type.struct",
+				"keyword.other.typedef",
+				"meta.tag",
+				"entity.name.tag",
+				"entity.name.section",
+				//special
+				"constant.character.escape",
+				"string.regexp",
+				"variable.language",
+				//operator
+				"operator",
+				"entity.name.function.operator",
+				"keyword.operator",
+				"support",
+				//Property
+				"property",
+				"variable.object.property",
+				"variable.other.property",
+				"variable.other.object.property",
+				"variable.other.constant.property"
+			],
+			"settings": {
+				"foreground": "{{prim}}"
+			}
+		},
+		{ //Constant,String,Character,Number,Boolean,Float
+			"name": "secondary",
+			"scope": [
+				"constant",
+				"constant.character",
+				"constant.numeric",
+				"constant.numeric.float",
+				"string",
+				"support.constant"
+			],
+			"settings": {
+				"foreground": "{{seco}}"
+			}
+		},
+		{ //PreProc,Include,Define,Macro,Function
+			"name": "tertiary",
+			"scope": [
+				"entity.name.namespace",
+				"keyword.control.directive",
+				"keyword.control.directive.define",
+				"entity.name.function.preprocessor",
+				"meta.preprocessor.macro",
+				"meta.function",
+				"meta.function-call",
+				"entity.name.function",
+				"support.function",
+				"punctuation.definition.directive"
+			],
+			"settings": {
+				"foreground": "{{tert}}"
+			}
+		},
+		{ //Coditional,Repeat
+			"name": "quaternary",
+			"scope": [
+				"keyword.control.conditional",
+				"keyword.control.repeat",
+				"keyword.control.flow",
+				"keyword.control.if",
+				"keyword.control.fi",
+				"keyword.control.then",
+				"keyword.control.else",
+				"keyword.control.elif",
+				"keyword.control.switch",
+				"keyword.control.case",
+				"keyword.control.do",
+				"keyword.control.while",
+				"keyword.control.for",
+				"keyword.control.break",
+				"keyword.control.continue"
+				// "keyword.control.return",
+			],
+			"settings": {
+				"foreground": "{{quat}}"
+			}
+		},
+		{ //invalid
+			"name": "err",
+			"scope": [
+				"invalid",
+				"markup.deleted"
+			],
+			"settings": {
+				"foreground": "{{err}}"
+			}
+		},
+		{ //Delimiter
+			"name": "quinary",
+			"scope": [
+				// "punctuation",
+				"meta.tail.struct",
+				"punctuation.separator",
+				"punctuation.section",
+				"punctuation.definition.parameters",
+				"punctuation.definition.array",
+				"punctuation.definition.dictionary",
+				"punctuation.terminator.statement"
+			],
+			"settings": {
+				"foreground": "{{quin}}"
+			}
+		},
+		{ //paramrter
+			"name": "fg-s",
+			"scope": [
+				"parameter",
+				"variable.parameter"
+			],
+			"settings": {
+				"foreground": "{{fgs}}"
+			}
+		},
+		{
+			"name": "Italics",
+			"scope": [
+				"meta.parameters",
+				"meta.type.parameters",
+				"meta.return.type",
+				"entity.name.type.interface",
+				"meta.type.annotation",
+				"meta.function.parameters",
+				"markup.italic.markdown"
+			],
+			"settings": {
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Markup Underline",
+			"scope": "markup.underline",
+			"settings": {
+				"fontStyle": "underline"
+			}
+		},
+		{
+			"name": "Bold",
+			"scope": [
+				"markup.bold.markdown",
+				"storage.type.annotation.dart"
+			],
+			"settings": {
+				"fontStyle": "bold"
+			}
+		}
+	]
+}
