@@ -37,3 +37,5 @@
      ```
 
 6. Save the `settings.json` file and enjoy.
+
+Hello fantasy world!🎉
