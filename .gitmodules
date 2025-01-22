@@ -7,3 +7,6 @@
 [submodule "themes/oh-my-posh"]
 	path = themes/oh-my-posh
 	url = git@github.com:OneiroiTheme/oh-my-posh.git
+[submodule "themes/starship"]
+	path = themes/starship
+	url = git@github.com:OneiroiTheme/starship.git
