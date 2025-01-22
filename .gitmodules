@@ -4,3 +4,6 @@
 [submodule "themes/nvim"]
 	path = themes/nvim
 	url = git@github.com:OneiroiTheme/oneiroi.nvim.git
+[submodule "themes/oh-my-posh"]
+	path = themes/oh-my-posh
+	url = git@github.com:OneiroiTheme/oh-my-posh.git
