@@ -1,3 +1,6 @@
 [submodule "themes/vscode"]
 	path = themes/vscode
 	url = git@github.com:OneiroiTheme/vscode.git
+[submodule "themes/nvim"]
+	path = themes/nvim
+	url = git@github.com:OneiroiTheme/oneiroi.nvim.git
