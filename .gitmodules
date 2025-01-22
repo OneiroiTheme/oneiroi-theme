@@ -10,3 +10,6 @@
 [submodule "themes/starship"]
 	path = themes/starship
 	url = git@github.com:OneiroiTheme/starship.git
+[submodule "themes/windows-terminal"]
+	path = themes/windows-terminal
+	url = git@github.com:OneiroiTheme/windows-terminal.git
