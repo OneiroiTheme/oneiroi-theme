@@ -12,12 +12,12 @@
 
 > A fantastic theme for :  
 
-- [Visual Studio Code](./packages/vscode/README.md)
-- [Neovim](./packages/nvim/README.md)
-- [Windows Terminal](./packages/windows-terminal/README.md)
-- [Termux](./packages/termux/README.md)
-- [Oh My Posh](./packages/oh-my-posh/README.md)
-- [Starship](./packages/starship/README.md)
+- [Visual Studio Code](http://github.com/OneiroiTheme/vscode)
+- [Neovim](http://github.com/OneiroiTheme/oneiroi.nvim)
+- [Windows Terminal](http://github.com/OneiroiTheme/windows-terminal)
+- [Termux](http://github.com/OneiroiTheme/termux)
+- [Oh My Posh](http://github.com/OneiroiTheme/oh-my-posh)
+- [Starship](http://github.com/OneiroiTheme/starship)
 - and more
 
 ## color palattes
