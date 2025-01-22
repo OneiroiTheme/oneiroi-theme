@@ -1,0 +1,3 @@
+[submodule "themes/vscode"]
+	path = themes/vscode
+	url = git@github.com:OneiroiTheme/vscode.git
