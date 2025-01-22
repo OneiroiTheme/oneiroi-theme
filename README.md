@@ -1,14 +1,35 @@
+# Oneiroi theme
+
+> Fantasy world,fantasy code
+
 <p align="center">
-  <img src="images/Oneiroi_full_2.png" alt="Oneiroi Theme" width="70%" />
+  <img src="./doc/oneiroi.png" alt="Oneiroi Theme" width="70%" />
 </p>
 
 <p align="center">
-  <img src="images/Oneiroi_vscode.png" alt="Screenshot" width="80%" />
+  <img src="./doc/oneiroi-vscode.png" alt="Screenshot" width="80%" />
 </p>
 
-# Oneiroi Theme for your favorite apps
+> A fantastic theme for :  
 
-* [Visual Studio Code](packages/vscode/README.md)
-* [Windows Terminal](packages/windows-terminal/README.md)
-* [Termux](packages/termux/README.md)
-* [Oh My Posh](packages/oh-my-posh/README.md)
+- [Visual Studio Code](http://github.com/OneiroiTheme/vscode)
+- [Neovim](http://github.com/OneiroiTheme/oneiroi.nvim)
+- [Windows Terminal](http://github.com/OneiroiTheme/windows-terminal)
+- [Termux](http://github.com/OneiroiTheme/termux)
+- [Oh My Posh](http://github.com/OneiroiTheme/oh-my-posh)
+- [Starship](http://github.com/OneiroiTheme/starship)
+- and more
+
+## color palattes
+
+1. [oneiroi dream](./palettes/dream.css)
+
+    <img src="./doc/colortest-dream.png" alt="colortest-dream" width="70%" >
+
+2. [oneiroi melatonin](./palettes/melatonin.css)
+
+    <img src="./doc/colortest-melatonin.png" alt="colortest-melatonin" width="70%" />
+
+## License
+
+[MIT LICENSE](./LICENSE)
