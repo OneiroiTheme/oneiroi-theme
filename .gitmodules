@@ -1,0 +1,18 @@
+[submodule "themes/vscode"]
+	path = themes/vscode
+	url = git@github.com:OneiroiTheme/vscode.git
+[submodule "themes/nvim"]
+	path = themes/nvim
+	url = git@github.com:OneiroiTheme/oneiroi.nvim.git
+[submodule "themes/oh-my-posh"]
+	path = themes/oh-my-posh
+	url = git@github.com:OneiroiTheme/oh-my-posh.git
+[submodule "themes/starship"]
+	path = themes/starship
+	url = git@github.com:OneiroiTheme/starship.git
+[submodule "themes/windows-terminal"]
+	path = themes/windows-terminal
+	url = git@github.com:OneiroiTheme/windows-terminal.git
+[submodule "themes/termux"]
+	path = themes/termux
+	url = git@github.com:OneiroiTheme/termux.git
