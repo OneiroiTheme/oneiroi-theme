@@ -16,3 +16,6 @@
 [submodule "themes/termux"]
 	path = themes/termux
 	url = git@github.com:OneiroiTheme/termux.git
+[submodule "themes/wezterm"]
+	path = themes/wezterm
+	url = git@github.com:OneiroiTheme/wezterm.git
