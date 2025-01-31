@@ -18,4 +18,7 @@
 	url = git@github.com:OneiroiTheme/termux.git
 [submodule "themes/wezterm"]
 	path = themes/wezterm
-	url = git@github.com:OneiroiTheme/wezterm.git
+    url = git@github.com:OneiroiTheme/wezterm.git
+[submodule "themes/alacritty"]
+	path = themes/alacritty
+	url = git@github.com:OneiroiTheme/alacritty.git
