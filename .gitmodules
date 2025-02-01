@@ -22,3 +22,6 @@
 [submodule "themes/alacritty"]
     path = themes/alacritty
     url = git@github.com:OneiroiTheme/alacritty.git
+[submodule "themes/tmux"]
+    path = themes/tmux
+    url = git@github.com:OneiroiTheme/tmux.git
