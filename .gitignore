@@ -3,3 +3,5 @@ _packages
 _test
 _bak
 /node_modules
+/_build
+/scripts/_build
