@@ -3,14 +3,24 @@
 > Fantasy world,fantasy code
 
 <p align="center">
-  <img src="./doc/oneiroi.png" alt="Oneiroi Theme" width="70%" />
+  <img src="https://raw.githubusercontent.com/OneiroiTheme/oneiroi-theme/main/assets/oneiroi.png" alt="Oneiroi Theme" width="40%" />
 </p>
 
 <p align="center">
-  <img src="./doc/oneiroi-vscode.png" alt="Screenshot" width="80%" />
+  <a href="https://github.com/OneiroiTheme/oneiroi-theme/stargazers"><img src="https://img.shields.io/github/stars/OneiroiTheme/oneiroi-theme?style=flat-square&labelColor=343a41&color=ffacaa" alt='github stars'/></a>
+  <a href="https://github.com/OneiroiTheme/oneiroi-theme/issues"><img src="https://img.shields.io/github/issues/OneiroiTheme/oneiroi-theme?style=flat-square&labelColor=343a41&color=ffdfaa" alt='github issues'/></a>
+  <a href="https://github.com/OneiroiTheme/oneiroi-theme/contributors"><img src="https://img.shields.io/github/contributors/OneiroiTheme/oneiroi-theme?style=flat-square&labelColor=343a41&color=aaffdf" alt='github contributors'/></a>
 </p>
 
-> A fantastic theme for :  
+<br/>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/OneiroiTheme/oneiroi-theme/main/assets/oneiroi-vscode.png" alt="Screenshot" width="80%" />
+</p>
+
+<br/>
+
+> oneiroi theme for :  
 
 - [Visual Studio Code](http://github.com/OneiroiTheme/vscode)
 - [Neovim](http://github.com/OneiroiTheme/oneiroi.nvim)
@@ -27,11 +37,11 @@
 
 1. [oneiroi dream](./palettes/dream.css)
 
-    <img src="./doc/colortest-dream.png" alt="colortest-dream" width="70%" >
+    <img src="https://raw.githubusercontent.com/OneiroiTheme/oneiroi-theme/main/assets/colortest-dream.png" alt="colortest-dream" width="70%" >
 
 2. [oneiroi melatonin](./palettes/melatonin.css)
 
-    <img src="./doc/colortest-melatonin.png" alt="colortest-melatonin" width="70%" />
+    <img src="https://raw.githubusercontent.com/OneiroiTheme/oneiroi-theme/main/assets/colortest-melatonin.png" alt="colortest-melatonin" width="70%" />
 
 ## License
 
