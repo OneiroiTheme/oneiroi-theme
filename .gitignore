@@ -5,3 +5,4 @@ _bak
 /node_modules
 /_build
 /scripts/_build
+__pycache__/
