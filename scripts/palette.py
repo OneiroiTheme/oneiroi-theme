@@ -1,5 +1,5 @@
 import re
-from typing import Any, Tuple
+from typing import Tuple
 from utils import VIEW, parse_css, parse_conf, script_dir
 
 
@@ -9,13 +9,27 @@ class PLT:
         self.meta: VIEW = parse_conf(meta_path)
 
     @property
-    def refs(self) -> list[Tuple[str, Any]]:
-        pattern = re.compile(r"^var\((.*?)\)$")
+    def keycolors(self) -> list[str]:
         return [
-            (k, match.group(1))
-            for k, v in self.css.items()
-            if isinstance(v, str) and (match := pattern.match(v))
+            "--primary",
+            "--secondary",
+            "--tertiary",
+            "--quaternary",
+            "--quinary",
+            "--senary",
         ]
+
+    @property
+    def refs(self) -> list[Tuple[str, str]]:
+        # Resolve variable references
+        pattern = re.compile(r"^var\((.*?)\)$")
+
+        def resolve(k):
+            while m := pattern.match(self.css[k]):
+                k = m.group(1)
+            return k
+
+        return [(k, resolve(k)) for k in self.css if pattern.match(self.css[k])]
 
     @property
     def css_extend(self) -> VIEW:
@@ -24,7 +38,8 @@ class PLT:
         csse: VIEW = {}
         for k, v in refs:
             csse[k] = css[v]
-            csse[k + "-s"] = css[v + "-s"]
+            if k in self.keycolors:
+                csse[k + "-s"] = css[v + "-s"]
         return css | csse
 
     @property
