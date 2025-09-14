@@ -6,31 +6,34 @@ from utils import (
     TPL_PATH,
     scan_d,
     scan_f,
-    vreg,
     parse_json,
+    mustache_render,
 )
 
 
 def build_pkg(pkg_path: str, view: VIEW, tpl_path: str, output_path: str):
-    conf = parse_json(tpl_path)
-    input = conf["input"]
-    output = conf["output"]
+    tpl_meta = parse_json(tpl_path)
+    view["tpl"] = tpl_meta
+    conf = tpl_meta["templates"]
 
-    if isinstance(input, str):
-        input = [input]
-    if isinstance(output, str):
-        output = [output]
+    if not isinstance(conf, list):
+        conf = [conf]
+    for c in conf:
+        try:
+            Type = c["type"]
+            input = c["input"]
+            output = c["output"]
 
-    if len(input) != len(output):
-        raise ValueError(f"format error, check '{tpl_path}'")
-    for i, o in zip(input, output):
-        i = pkg_path + vreg(i, view)
-        o = output_path + vreg(o, view)
-        with open(i, "r", encoding="utf-8") as f_in:
-            data = f_in.read()
-        data = vreg(data, view)
-        with open(o, "w", encoding="utf-8") as f_out:
-            f_out.write(data)
+            if Type == "mustache":
+                input = pkg_path + mustache_render(input, view)
+                output = output_path + mustache_render(output, view)
+                with open(input, "r", encoding="utf-8") as f_in:
+                    data = f_in.read()
+                data = mustache_render(data, view)
+                with open(output, "w", encoding="utf-8") as f_out:
+                    f_out.write(data)
+        except ValueError:
+            raise ValueError(f"format error, check '{tpl_path}'")
 
 
 def Build(

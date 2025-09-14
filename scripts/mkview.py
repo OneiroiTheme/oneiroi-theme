@@ -1,7 +1,7 @@
 import os
 import json
 from palette import PLT
-from utils import PLT_ROOT, PLT_META_ROOT, VIEW_PATH, scan_f
+from utils import PLT_ROOT, PLT_META_ROOT, VIEW_PATH, VIEW, scan_f, parse_conf
 
 
 def Mkview(
@@ -21,7 +21,9 @@ def Mkview(
         m = meta_path + "/" + _plt + ".ini"
         o = output_path + "/" + _plt + ".json"
 
-        palette = PLT(p, m)
+        plt_meta: VIEW = parse_conf(m)
+        view = PLT(p).view
+        view["plt"] = plt_meta["metadata"]
         os.makedirs(os.path.dirname(o), exist_ok=True)
         with open(o, "w", encoding="utf-8") as f:
-            json.dump(palette.view, f, ensure_ascii=False, indent=4)
+            json.dump(view, f, ensure_ascii=False, indent=4)

@@ -82,8 +82,8 @@ def regsub(input: str, ptn: str, view: None | KV = None) -> str:
         return _reg(input, ptn)
 
 
-def vreg(input: str, view: VIEW, ptn: str = MSTP) -> str:
-    d = flatten_dict(view)
+def mustache_render(template: str, view: dict) -> str:
+    d: list[KV] = flatten_dict(view)
     for i in d:
-        input = regsub(input, ptn, i)
-    return input
+        template = regsub(template, MSTP, i)
+    return template
