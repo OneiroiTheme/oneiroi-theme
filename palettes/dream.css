@@ -1,44 +1,143 @@
 :root {
-    --for: #FFFDEB;
-    --com: #53575B;
-    --red: #FFAACA;
-    --ora: #FFB5AA;
-    --yel: #FFDFAA;
-    --gre: #CAFFAA;
-    --aqu: #AAFFDF;
-    --blu: #AACAFF;
-    --pur: #DFAAFF;
-    --sel: #282D32;
-    --cur: #282D32;
-    --bac: #343A41;
+    --primary: #ffb0cd;
+    --surface-tint: #ffb0cd;
+    --on-primary: #531d36;
+    --primary-container: #6e334c;
+    --on-primary-container: #ffd9e4;
+    --secondary: #ffb1c0;
+    --on-secondary: #551d2c;
+    --secondary-container: #713341;
+    --on-secondary-container: #ffd9df;
+    --tertiary: #ffb4a9;
+    --on-tertiary: #561e17;
+    --tertiary-container: #73342b;
+    --on-tertiary-container: #ffdad5;
+    --error: #ff6a6f;
+    --on-error: #542325;
+    --error-container: #8c3a3d;
+    --on-error-container: #ffbfc1;
 
-    --for-s: #C2C3B8;
-    --com-s: #717574;
-    --red-s: #B1768C;
-    --ora-s: #B17D76;
-    --yel-s: #B19B76;
-    --gre-s: #8CB176;
-    --aqu-s: #76B19B;
-    --blu-s: #768CB1;
-    --pur-s: #9B76B1;
-    --bac-s: #5A6571;
+    --background: #191114;
+    --on-background: #eedfe2;
+    --surface: #101418;
+    --on-surface: #e0e2e8;
+    --surface-variant: #514347;
+    --on-surface-variant: #ecd7db;
+    --outline: #c0adb1;
+    --outline-variant: #9d8c90;
+    --shadow: #000000;
+    --scrim: #000000;
 
-    --bac2: #282D32;
-    --bac3: #1F1D21;
+    --inverse-surface: #e0e2e8;
+    --inverse-on-surface: #2d3135;
+    --inverse-primary: #8a4a64;
+    --primary-fixed: #ffd9e4;
+    --on-primary-fixed: #390720;
+    --primary-fixed-dim: #ffb0cd;
+    --on-primary-fixed-variant: #6e334c;
+    --secondary-fixed: #ffd9df;
+    --on-secondary-fixed: #3a0717;
+    --secondary-fixed-dim: #ffb1c0;
+    --on-secondary-fixed-variant: #713341;
+    --tertiary-fixed: #ffdad5;
+    --on-tertiary-fixed: #3b0905;
+    --tertiary-fixed-dim: #ffb4a9;
+    --on-tertiary-fixed-variant: #73342b;
 
-    --war: #FFFA6A;
-    --war-s: #AAA746;
-    --suc: #6FFF6A;
-    --suc-s: #4AAA46;
-    --err: #FF6A6F;
-    --err-s: #AA464A;
-    --inf: #6A6FFF;
-    --inf-s: #464AAA;
+    --surface-dim: #101418;
+    --surface-bright: #414549;
+    --surface-container-lowest: #05080b;
+    --surface-container-low: #1a1e22;
+    --surface-container: #25282c;
+    --surface-container-high: #2f3337;
+    --surface-container-highest: #3a3e42;
 
-    --primary: var(--red);
-    --secondary: var(--yel);
-    --tertiary: var(--aqu);
-    --quaternary: var(--pur);
-    --quinary: var(--blu);
-    --senary: var(--gre);
+    --red: #ffb0cd;
+    --on-red: #531d36;
+    --red-container: #6e334c;
+    --on-red-container: #ffd9e4;
+    --grn: #aad291;
+    --on-grn: #173807;
+    --grn-container: #2e4f1c;
+    --on-grn-container: #c5efa7;
+    --yel: #edc06c;
+    --on-yel: #412d00;
+    --yel-container: #5e4200;
+    --on-yel-container: #ffdea7;
+    --blu: #a6c8ff;
+    --on-blu: #03305f;
+    --blu-container: #234777;
+    --on-blu-container: #d5e3ff;
+    --mag: #e0b8f6;
+    --on-mag: #422356;
+    --mag-container: #59396e;
+    --on-mag-container: #f4daff;
+    --cya: #89d6b9;
+    --on-cya: #00382a;
+    --cya-container: #00513e;
+    --on-cya-container: #a4f2d5;
+
+    --warning: #FFFA6A;
+    --on-warning: #545223;
+    --warning-container: #8d8a3b;
+    --on-warning-container: #fffdeb;
+    --success: #6fff6a;
+    --on-success: #245323;
+    --success-container: #3d8d3b;
+    --on-success-container: #c1ffbf;
+    --info: #6A6FFF;
+    --on-info: #232453;
+    --info-container: #3a3d8b;
+    --on-info-container: #c0c2ff;
+}
+
+.ansi {
+    --blk: var(--surface-container);
+    --rrd: var(--red-container);
+    --ggn: var(--grn-container);
+    --yyl: var(--yel-container);
+    --bbl: var(--blu-container);
+    --mmg: var(--mag-container);
+    --ccy: var(--cya-container);
+    --wwt: var(--outline);
+
+    --gra: var(--outline-variant);
+    --wht: var(--on-surface);
+}
+
+.editor {
+    /* --wht */
+    --foreground: var(--on-surface);
+    /* --blk */
+    --background: var(--surface-container);
+    /* --wwt */
+    --comment: var(--outline);
+    --string: var(--yel);
+    --literal: var(--mag);
+    --keyword: var(--red);
+    --function: var(--cya);
+    --delete: var(--error);
+    --class: var(--blu);
+    --builtin: var(--red);
+    --property: var(--grn);
+    --namespace: var(--cya);
+    /* --wwt */
+    --punctuation: var(--outline);
+    --decorator: var(--grn);
+    --operator: var(--on-blu-container);
+    --number: var(--mag);
+    --boolean: var(--mag);
+    /* --wht */
+    --variable: var(--on-surface);
+    /* --literal */
+    --constant: var(--mag);
+    --symbol: var(--mag);
+    --interpolation: var(--mag);
+    /* --keyword */
+    --selector: var(--red);
+    --keyword-control: var(--red);
+    --regex: var(--on-yel-container);
+    --json-property: var(--red);
+    --parameter: var(--on-surface-variant);
+    --selection-background: var(--secondary-container);
 }
