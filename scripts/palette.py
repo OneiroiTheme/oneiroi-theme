@@ -1,5 +1,4 @@
 import re
-from typing import Tuple
 from utils import VIEW, parse_css, parse_conf, script_dir
 
 
@@ -8,34 +7,39 @@ class PLT:
         self.css: VIEW = parse_css(plt_path)
 
     @property
-    def refs(self) -> list[Tuple[str, str]]:
-        # Resolve variable references
-        pattern = re.compile(r"^var\((.*?)\)$")
-
-        def resolve(k):
-            while m := pattern.match(self.css[k]):
-                k = m.group(1)
-            return k
-
-        return [(k, resolve(k)) for k in self.css if pattern.match(self.css[k])]
-
-    @property
-    def css_resolved(self) -> VIEW:
+    def resolved_css(self) -> VIEW:
         css = self.css
-        refs = self.refs
-        csse: VIEW = {}
-        for k, v in refs:
-            csse[k] = css[v]
-        return css | csse
+        pattern = re.compile(r"^var\((--[\w-]+)\)$")
+        top_level_vars = {k: v for k, v in css.items() if isinstance(v, str)}
+
+        def resolve_value(v):
+            if isinstance(v, str):
+                m = pattern.match(v)
+                if m:
+                    return top_level_vars.get(m.group(1), v)
+                return v
+            elif isinstance(v, dict):
+                return {kk: resolve_value(vv) for kk, vv in v.items()}
+            else:
+                return v
+
+        return {k: resolve_value(v) for k, v in css.items()}
 
     @property
     def view(self) -> VIEW:
         # Resolve variable name rules
-        def css_convert(view: VIEW, rule_path=script_dir + "/format.ini"):
-            rules = parse_conf(rule_path)
-            for K, V in rules["rules"].items():
-                view = {re.compile(K).sub(V, k): v for k, v in view.items()}
-            return view
+        rule_path = script_dir + "/format.ini"
+        rules = parse_conf(rule_path)
 
-        view = css_convert(self.css_resolved)
-        return view
+        def apply_rules(d: dict) -> dict:
+            new_d = {}
+            for k, v in d.items():
+                for K, V in rules["rules"].items():
+                    k = re.compile(K).sub(V, k)
+                if isinstance(v, dict):
+                    new_d[k] = apply_rules(v)
+                else:
+                    new_d[k] = v
+            return new_d
+
+        return apply_rules(self.resolved_css)

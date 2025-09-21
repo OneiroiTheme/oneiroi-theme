@@ -2,6 +2,7 @@ import argparse
 
 from build import Build
 from mkview import Mkview
+from mkreadme import MKreadme
 
 
 def main():
@@ -21,6 +22,11 @@ def main():
     mkview.add_argument("--metapath", metavar="<path>", help="metadate root path")
     mkview.add_argument("--outputpath", metavar="<path>", help="view output path")
 
+    mkreadme = commands.add_parser("mkreadme", help="Make README.md for packages")
+    mkreadme.add_argument("pkg", nargs="*", default=True, help="specific name")
+    mkreadme.add_argument("--pkgpath", metavar="<path>", help="packages root path")
+    mkreadme.add_argument("--outputpath", metavar="<path>", help="packages output path")
+
     parser.add_argument("-v", "--verbose", action="store_true", help="Verbose")
     args = parser.parse_args()
     if args.command == "build":
@@ -28,6 +34,8 @@ def main():
         # switch(args.theme, args.packages, args.distransparent)
     elif args.command == "mkview":
         Mkview(args.plt, args.pltpath, args.metapath, args.outputpath)
+    elif args.command == "mkreadme":
+        MKreadme(args.pkg, args.pkgpath, args.outputpath)
 
 
 if __name__ == "__main__":

@@ -1,39 +1,13 @@
+from template import PORT
 from utils import (
     VIEW,
     PKG_ROOT,
     VIEW_PATH,
-    BUILD_PATH,
-    TPL_PATH,
+    TPL_CONFIG_PATH,
     scan_d,
     scan_f,
     parse_json,
-    mustache_render,
 )
-
-
-def build_pkg(pkg_path: str, view: VIEW, tpl_path: str, output_path: str):
-    tpl_meta = parse_json(tpl_path)
-    view["tpl"] = tpl_meta
-    conf = tpl_meta["templates"]
-
-    if not isinstance(conf, list):
-        conf = [conf]
-    for c in conf:
-        try:
-            Type = c["type"]
-            input = c["input"]
-            output = c["output"]
-
-            if Type == "mustache":
-                input = pkg_path + mustache_render(input, view)
-                output = output_path + mustache_render(output, view)
-                with open(input, "r", encoding="utf-8") as f_in:
-                    data = f_in.read()
-                data = mustache_render(data, view)
-                with open(output, "w", encoding="utf-8") as f_out:
-                    f_out.write(data)
-        except ValueError:
-            raise ValueError(f"format error, check '{tpl_path}'")
 
 
 def Build(
@@ -52,13 +26,14 @@ def Build(
     output_path = output_path or PKG_ROOT
 
     for _plt in plt:
-        view = view_path + "/" + _plt + ".json"
-        view = parse_json(view)
+        plt_view = view_path + "/" + _plt + ".json"
+        plt_view = parse_json(plt_view)
         for _pkg in pkg:
             _pkg_path = pkg_path + "/" + _pkg
-            _tpl_path = _pkg_path + TPL_PATH
+            _tpl_path = _pkg_path + TPL_CONFIG_PATH
             _out_path = output_path + "/" + _pkg
-            build_pkg(_pkg_path, view, _tpl_path, _out_path)
+            port = PORT(_pkg_path, _tpl_path)
+            port.build(plt_view, _out_path)
 
 
 if __name__ == "__main__":
