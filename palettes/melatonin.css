@@ -94,16 +94,21 @@
 
 .ansi {
     --blk: var(--surface-container);
-    --rrd: var(--red-container);
-    --ggn: var(--grn-container);
-    --yyl: var(--yel-container);
-    --bbl: var(--blu-container);
-    --mmg: var(--mag-container);
-    --ccy: var(--cya-container);
-    --wwt: var(--outline);
-
     --gra: var(--outline-variant);
-    --wht: var(--on-surface);
+    --red: var(--red);
+    --rrd: var(--on-red-container);
+    --grn: var(--grn);
+    --ggn: var(--on-grn-container);
+    --yel: var(--yel);
+    --yyl: var(--on-yel-container);
+    --blu: var(--blu);
+    --bbl: var(--on-blu-container);
+    --mag: var(--mag);
+    --mmg: var(--on-mag-container);
+    --cya: var(--cya);
+    --ccy: var(--on-cya-container);
+    --wht: var(--on-surface-variant);
+    --wwt: var(--on-surface);
 }
 
 .editor {
@@ -140,5 +145,19 @@
     --regex: var(--on-yel-container);
     --json-property: var(--red);
     --parameter: var(--on-surface-variant);
+    --mute: var(--outline-variant);
     --selection-background: var(--secondary-container);
+}
+
+.git {
+    --added: var(--grn);
+    --modified: var(--yel);
+    --deleted: var(--red);
+    --renamed: var(--grn-container);
+    --stage-modified: var(--yel-container);
+    --stage-deleted: var(--red-container);
+    --untracked: var(--on-grn-container);
+    --ignored: var(--outline-variant);
+    --conflicting: var(--error);
+    --submodule: var(--blu);
 }
