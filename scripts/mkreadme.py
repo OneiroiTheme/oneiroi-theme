@@ -3,14 +3,14 @@ from utils import (
     VIEW,
     PKG_ROOT,
     TPL_CONFIG_PATH,
+    README_LOCAL_TEMPLATES_PATH,
     README_DEFAULT_TEMPLATES_PATH,
     READABLE_SECTION_NAME,
     render,
     scan_f,
     scan_d,
-    script_dir,
 )
-from pprint import pprint
+import re
 
 
 def readme_build(
@@ -35,7 +35,10 @@ def readme_build(
     readmes = read_files(readmes_list, readmes_defaults)
     readme = readmes["README"]
     readmes = {k: render(v, view) for k, v in readmes.items()}
-    readme = render(readme, {READABLE_SECTION_NAME: readmes}, default="").rstrip("\n")
+    readme = re.sub(
+        r"\n{3,}", "\n\n", render(readme, {READABLE_SECTION_NAME: readmes}, default="")
+    ).rstrip("\n")
+    print(readme)
 
     return readme
 
@@ -55,10 +58,10 @@ def MKreadme(
         _pkg_path = pkg_path + "/" + _pkg
         _tpl_path = _pkg_path + TPL_CONFIG_PATH
         _out_path = output_path + "/" + _pkg + "/README.md"
-        _readme_path = _tpl_path
+        _readme_path = _pkg_path + README_LOCAL_TEMPLATES_PATH
         pkg_meta_view = PORT(_pkg_path, _tpl_path).meta
         content = readme_build(
             _readme_path, readme_default_templates_path, pkg_meta_view
         )
-        # with open(_out_path, "w", encoding="utf-8") as f:
-        #     f.write(content)
+        with open(_out_path, "w", encoding="utf-8") as f:
+            f.write(content)
