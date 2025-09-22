@@ -1,0 +1,162 @@
+:root {
+    --primary: #8a4a64;
+    --surface-tint: #8a4a64;
+    --on-primary: #ffffff;
+    --primary-container: #ffd9e4;
+    --on-primary-container: #6e334c;
+    --secondary: #8e4959;
+    --on-secondary: #ffffff;
+    --secondary-container: #ffd9df;
+    --on-secondary-container: #713341;
+    --tertiary: #904a41;
+    --on-tertiary: #ffffff;
+    --tertiary-container: #ffdada;
+    --on-tertiary-container: #73342b;
+    --error: #904a4a;
+    --on-error: #ffffff;
+    --error-container: #ffdad9;
+    --on-error-container: #733334;
+
+    --background: #fff8f8;
+    --on-background: #21191c;
+    --surface: #f7f9ff;
+    --on-surface: #181c20;
+    --surface-variant: #f2dde1;
+    --on-surface-variant: #514347;
+    --outline: #837377;
+    --outline-variant: #d5c2c6;
+    --shadow: #000000;
+    --scrim: #000000;
+
+    --inverse-surface: #2d3135;
+    --inverse-on-surface: #eff1f6;
+    --inverse-primary: #ffb0cd;
+    --primary-fixed: #ffd9e4;
+    --on-primary-fixed: #390720;
+    --primary-fixed-dim: #ffb0cd;
+    --on-primary-fixed-variant: #6e334c;
+    --secondary-fixed: #ffd9df;
+    --on-secondary-fixed: #3a0717;
+    --secondary-fixed-dim: #ffb1c0;
+    --on-secondary-fixed-variant: #713341;
+    --tertiary-fixed: #ffdada;
+    --on-tertiary-fixed: #3b0905;
+    --tertiary-fixed-dim: #ffb4a9;
+    --on-tertiary-fixed-variant: #73342b;
+
+    --surface-dim: #d8dae0;
+    --surface-bright: #f7f9ff;
+    --surface-container-lowest: #ffffff;
+    --surface-container-low: #f1f3f9;
+    --surface-container: #eceef3;
+    --surface-container-high: #e6e8ee;
+    --surface-container-highest: #e0e2e8;
+
+    --red: #8a4a64;
+    --on-red: #ffffff;
+    --red-container: #ffd9e4;
+    --on-red-container: #6e334c;
+    --grn: #456732;
+    --on-grn: #ffffff;
+    --grn-container: #c5efab;
+    --on-grn-container: #2e4f1c;
+    --yel: #7a580c;
+    --on-yel: #ffffff;
+    --yel-container: #ffdea7;
+    --on-yel-container: #5e4200;
+    --blu: #3d5f90;
+    --on-blu: #ffffff;
+    --blu-container: #d5e3ff;
+    --on-blu-container: #234777;
+    --mag: #725187;
+    --on-mag: #ffffff;
+    --mag-container: #f4daff;
+    --on-mag-container: #59376e;
+    --cya: #166b54;
+    --on-cya: #ffffff;
+    --cya-container: #a4f2d5;
+    --on-cya-container: #00513e;
+
+    --warning: #636116;
+    --on-warning: #ffffff;
+    --warning-container: #eae68e;
+    --on-warning-container: #4b4900;
+    --success: #3d6838;
+    --on-success: #ffffff;
+    --success-container: #bef0b2;
+    --on-success-container: #265022;
+    --info: #575992;
+    --on-info: #ffffff;
+    --info-container: #e1e0ff;
+    --on-info-container: #3f4178;
+}
+
+.ansi {
+    --blk: var(--surface-container);
+    --gra: var(--outline-variant);
+    --red: var(--red);
+    --rrd: var(--on-red-container);
+    --grn: var(--grn);
+    --ggn: var(--on-grn-container);
+    --yel: var(--yel);
+    --yyl: var(--on-yel-container);
+    --blu: var(--blu);
+    --bbl: var(--on-blu-container);
+    --mag: var(--mag);
+    --mmg: var(--on-mag-container);
+    --cya: var(--cya);
+    --ccy: var(--on-cya-container);
+    --wht: var(--on-surface-variant);
+    --wwt: var(--on-surface);
+}
+
+.editor {
+    /* --wht */
+    --foreground: var(--on-surface);
+    /* --blk */
+    --background: var(--surface-container);
+    /* --wwt */
+    --comment: var(--outline);
+    --string: var(--yel);
+    --literal: var(--mag);
+    --keyword: var(--red);
+    --function: var(--cya);
+    --delete: var(--error);
+    --class: var(--blu);
+    --builtin: var(--red);
+    --property: var(--grn);
+    --namespace: var(--cya);
+    /* --wwt */
+    --punctuation: var(--outline);
+    --decorator: var(--grn);
+    --operator: var(--on-blu-container);
+    --number: var(--mag);
+    --boolean: var(--mag);
+    /* --wht */
+    --variable: var(--on-surface);
+    /* --literal */
+    --constant: var(--mag);
+    --symbol: var(--mag);
+    --interpolation: var(--mag);
+    /* --keyword */
+    --selector: var(--red);
+    --keyword-control: var(--red);
+    --regex: var(--on-yel-container);
+    --json-property: var(--red);
+    --parameter: var(--on-surface-variant);
+    --mute: var(--outline-variant);
+    --selection-background: var(--secondary-container);
+}
+
+.git {
+    --added: var(--grn);
+    --modified: var(--yel);
+    --deleted: var(--red);
+    --renamed: var(--grn-container);
+    --stage-modified: var(--yel-container);
+    --stage-deleted: var(--red-container);
+    --untracked: var(--on-grn-container);
+    --ignored: var(--outline-variant);
+    --conflicting: var(--error);
+    --submodule: var(--blu);
+}
