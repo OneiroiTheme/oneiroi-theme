@@ -32,6 +32,8 @@ def Mkview(
         plt_meta: VIEW = parse_conf(m)
         view = PLT(p).view
         view[PLT_SECTION_NAME] = plt_meta["metadata"]
+        view[PLT_SECTION_NAME]["theme_cap"] = view[PLT_SECTION_NAME]["theme"].title()
+        view[PLT_SECTION_NAME]["plt_cap"] = view[PLT_SECTION_NAME]["plt"].title()
         os.makedirs(os.path.dirname(o), exist_ok=True)
         with open(o, "w", encoding="utf-8") as f:
             json.dump(view, f, ensure_ascii=False, indent=4)
