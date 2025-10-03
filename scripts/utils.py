@@ -3,6 +3,7 @@ import re
 import configparser
 import json
 from typing import Any, Tuple
+import chevron
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 PLT_ROOT = os.path.abspath(script_dir + "/../palettes")
@@ -16,6 +17,7 @@ README_DEFAULT_TEMPLATES_PATH = f"{script_dir}/readme_templates"
 
 TPL_SECTION_NAME: str = "tpl"
 PLT_SECTION_NAME: str = "plt"
+PLTS_SECTION_NAME: str = "plts"
 READABLE_SECTION_NAME: str = "readme"
 
 MUSTACHE_PATTERN = "s|{{${key}}}|${value}|"
@@ -80,50 +82,11 @@ def parse_json(path: str) -> VIEW:
     return data
 
 
-def flatten_dict(d: VIEW, parent_key="", sep=".") -> list[KV]:
-    items = []
-    for k, v in d.items():
-        new_key = f"{parent_key}{sep}{k}" if parent_key else k
-        if isinstance(v, dict):
-            items.extend(flatten_dict(v, new_key, sep=sep))
-        else:
-            items.append((new_key, v))
-    return items
-
-
-def regsub(text: str, ptn: str, view: None | KV = None) -> str:
-    def reg(s: str, pattern: str) -> str:
-        parts = pattern.split("|")
-        if len(parts) < 3:
-            raise ValueError("Pattern must contain at least two '|' characters.")
-        regex, repl = parts[1], parts[2]
-        return re.sub(regex, repl, s)
-
-    if view is not None:
-        ptn = ptn.replace("${key}", view[0])
-        ptn = ptn.replace("${value}", view[1])
-
-    return reg(text, ptn)
-
-
-def mustache_render(template: str, view: dict, default: None | str = None) -> str:
-    d: list[KV] = flatten_dict(view)
-    if default is not None:
-        vars_found = re.findall(r"\{\{(.*?)\}\}", template)
-        keys = {k for k, _ in d}
-        for var in vars_found:
-            if var not in keys:
-                d.append((var, default))
-    for i in d:
-        template = regsub(template, MSTP, i)
-    return template
-
-
 def render(
     input: str, view: VIEW | None, type: str = "mustache", default: None | str = None
 ) -> str:
     if view is None:
         return input
     if type == "mustache":
-        return mustache_render(input, view, default)
+        return chevron.render(input, view)
     return input
