@@ -15,10 +15,7 @@ TPL_CONFIG_PATH = "/.template/configure.json"
 README_LOCAL_TEMPLATES_PATH = "/.template/docs"
 README_DEFAULT_TEMPLATES_PATH = f"{script_dir}/readme_templates"
 
-TPL_SECTION_NAME: str = "tpl"
-PLT_SECTION_NAME: str = "plt"
-PLTS_SECTION_NAME: str = "plts"
-READABLE_SECTION_NAME: str = "readme"
+README_SECTION_NAME: str = "readme"
 
 MUSTACHE_PATTERN = "s|{{${key}}}|${value}|"
 MSTP = MUSTACHE_PATTERN

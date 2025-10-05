@@ -1,5 +1,12 @@
 import re
-from utils import VIEW, TPL_SECTION_NAME, parse_json, render
+from utils import VIEW, parse_json, render
+
+DEFAULT_VIEW = [
+    {"type": "plt", "section_name": None},
+    {"type": "pltmeta", "section_name": "plt"},
+]
+VIEW_TYPE_NAME = "type"
+VIEW_SECTION_NAME = "section_name"
 
 
 class PORT:
@@ -31,15 +38,13 @@ class PORT:
 
     def render_conf(
         self, view: VIEW | None = None, output_path: str | None = None
-    ) -> list[tuple[str, str, str]]:
+    ) -> list[tuple[str, str, str, list[tuple[str, str | None]]]]:
         output_path = output_path or self.root
         meta = self.meta
         conf = meta.get("templates", None)
         l = []
         if conf is None:
             return l
-        if view is not None:
-            view[TPL_SECTION_NAME] = meta
         if not isinstance(conf, list):
             conf = [conf]
 
@@ -47,17 +52,17 @@ class PORT:
             type: str = c["type"]
             input: str = c["input"]
             output: str = c["output"]
+            views: list[dict | str] | None = c.get("views", None)
+            views = views or DEFAULT_VIEW
+            if isinstance(views, dict):
+                views = [views]
             input = self.root + render(input, view, type)
             output = output_path + render(output, view, type)
-            l.append((input, output, type))
+            v: list[tuple[str, str | None]] = []
+            for i in views:
+                if isinstance(i, str):
+                    v.append((i, None))
+                else:
+                    v.append((i[VIEW_TYPE_NAME], i.get(VIEW_SECTION_NAME, None)))
+            l.append((input, output, type, v))
         return l
-
-    def build(self, view: VIEW, output_path: str):
-        conf = self.render_conf(view, output_path)
-        for input, output, type in conf:
-            with open(input, "r", encoding="utf-8") as f_in:
-                data = f_in.read()
-            data = render(data, view, type)
-            with open(output, "w", encoding="utf-8") as f_out:
-                f_out.write(data)
-        return conf

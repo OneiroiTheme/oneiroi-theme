@@ -5,7 +5,7 @@ from utils import (
     TPL_CONFIG_PATH,
     README_LOCAL_TEMPLATES_PATH,
     README_DEFAULT_TEMPLATES_PATH,
-    READABLE_SECTION_NAME,
+    README_SECTION_NAME,
     render,
     scan_f,
     scan_d,
@@ -35,10 +35,14 @@ def readme_build(
     readmes = read_files(readmes_list, readmes_defaults)
     readme = readmes["README"]
     readmes = {k: render(v, view) for k, v in readmes.items()}
-    readme = re.sub(
-        r"\n{3,}", "\n\n", render(readme, {READABLE_SECTION_NAME: readmes}, default="")
-    ).rstrip("\n")
-    print(readme)
+    readme = (
+        re.sub(
+            r"\n{3,}",
+            "\n\n",
+            render(readme, {README_SECTION_NAME: readmes}),
+        ).rstrip("\n")
+        + "\n"
+    )
 
     return readme
 
