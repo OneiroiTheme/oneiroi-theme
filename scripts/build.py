@@ -12,6 +12,33 @@ from utils import (
     parse_json,
 )
 
+PORT_CONFIG_SECTION = "templates"
+DEFAULT_VIEW: list[dict] = [
+    {"type": "plt", "section_name": None},
+    {"type": "pltmeta", "section_name": "plt"},
+]
+VIEW_TYPE_NAME = "type"
+VIEW_SECTION_NAME = "section_name"
+DEFAULT_RENDER_TYPE = "mustache"
+
+
+def format_views(
+    views: list[dict | str] | dict | str | None,
+) -> list[tuple[str, str | None]]:
+    if isinstance(views, (dict, str)):
+        views_list = [views]
+    elif views is None:
+        views_list = DEFAULT_VIEW
+    else:
+        views_list = views
+    v: list[tuple[str, str | None]] = []
+    for i in views_list:
+        if isinstance(i, str):
+            v.append((i, None))
+        else:
+            v.append((i[VIEW_TYPE_NAME], i.get(VIEW_SECTION_NAME, None)))
+    return v
+
 
 def get_plt_meta_section(plt_meta_path: str) -> VIEW:
     plt_meta: VIEW = parse_conf(plt_meta_path)["metadata"]
@@ -29,10 +56,12 @@ def build_port(
     tpls_path: str,
 ):
 
-    def get_views(
-        types: list[tuple[str, str | None]],
-        port_meta: VIEW,
-    ) -> VIEW:
+    port_meta = p.meta
+    port_config = port_meta.get(PORT_CONFIG_SECTION, None)
+    if not port_config:
+        return
+
+    def get_views(types: list[tuple[str, str | None]]) -> VIEW:
         v: VIEW = {}
         for t, n in types:
             view: VIEW | list = {}
@@ -59,10 +88,13 @@ def build_port(
         with open(output, "w", encoding="utf-8") as f_out:
             f_out.write(data)
 
-    port_meta = p.meta
-    plt_view = parse_json(plt_view_path)
-    for input, output, type, views in p.render_conf(plt_view, outpath):
-        view = get_views(views, port_meta)
+    if isinstance(port_config, dict):
+        port_config = [port_config]
+    for conf in port_config:
+        view = format_views(conf.get("views", None))
+        view = get_views(view)
+        type = conf.get("type", DEFAULT_RENDER_TYPE)
+        input, output = p.render_io(conf["input"], conf["output"], type, view, outpath)
         build(input, output, type, view)
 
 
