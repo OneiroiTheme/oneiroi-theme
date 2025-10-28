@@ -110,44 +110,6 @@
     --wwt: var(--on-surface);
 }
 
-.editor {
-    /* --wht */
-    --foreground: var(--on-surface);
-    /* --blk */
-    --background: var(--surface-container);
-    /* --wwt */
-    --comment: var(--outline);
-    --string: var(--yel);
-    --literal: var(--mag);
-    --keyword: var(--red);
-    --function: var(--cya);
-    --delete: var(--error);
-    --class: var(--blu);
-    --builtin: var(--red);
-    --property: var(--grn);
-    --namespace: var(--cya);
-    /* --wwt */
-    --punctuation: var(--outline);
-    --decorator: var(--grn);
-    --operator: var(--on-blu-container);
-    --number: var(--mag);
-    --boolean: var(--mag);
-    /* --wht */
-    --variable: var(--on-surface);
-    /* --literal */
-    --constant: var(--mag);
-    --symbol: var(--mag);
-    --interpolation: var(--mag);
-    /* --keyword */
-    --selector: var(--red);
-    --keyword-control: var(--red);
-    --regex: var(--on-yel-container);
-    --json-property: var(--red);
-    --parameter: var(--on-surface-variant);
-    --mute: var(--outline-variant);
-    --selection-background: var(--secondary-container);
-}
-
 .git {
     --added: var(--grn);
     --modified: var(--yel);
@@ -159,4 +121,53 @@
     --ignored: var(--outline-variant);
     --conflicting: var(--error);
     --submodule: var(--blu);
+}
+
+.st {
+    --namespace: var(--blu);
+    --class: var(--grn);
+    --enum: var(--blu);
+    --interface: var(--blu);
+    --struct: var(--grn);
+    --type-parameter: var(--on-yel-container);
+    --type: var(--blu);
+    --parameter: var(--on-yel-container);
+    --variable: var(--on-surface);
+    --property: var(--blu);
+    --enum-member: var(--yel);
+    --decorator: var(--grn);
+    --event: var(--cya);
+    --function: var(--cya);
+    --method: var(--cya);
+    --macro: var(--mag);
+    --label: var(--mag);
+    --comment: var(--outline);
+    --string: var(--yel);
+    --keyword: var(--red);
+    --number: var(--mag);
+    --regexp: var(--red);
+    --operator: var(--on-blu-container);
+
+    --declaration: var(--blu);
+    --definition: var(--cya);
+    --readonly: var(--mag);
+    --static: var(--grn);
+    --deprecated: var(--outline);
+    --abstract: var(--red);
+    --async: var(--yel);
+    --modification: var(--yel);
+    --documentation: var(--blu);
+    --default-library: var(--blu);
+}
+
+.tm {
+    /* general */
+    --background: var(--surface-container);
+    --caret: var(--primary);
+    --foreground: var(--on-surface);
+    --invisibles: var(--outline);
+    --line-highlight: var(--secondary-container);
+    --selection: var(--secondary-container);
+    --find-highlight: var(--tertiary-container);
+    --find-highlight-foreground: var(--tertiary);
 }
