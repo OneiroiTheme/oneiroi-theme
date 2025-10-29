@@ -6,3 +6,5 @@ _bak
 /_build
 /scripts/_build
 __pycache__/
+/.venv
+/scripts/.venv

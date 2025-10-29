@@ -1,36 +1,101 @@
+from template import PORT
 from utils import (
     VIEW,
     PKG_ROOT,
     VIEW_PATH,
-    BUILD_PATH,
-    TPL_PATH,
+    TPL_CONFIG_PATH,
+    PLT_META_ROOT,
+    render,
     scan_d,
     scan_f,
-    vreg,
+    parse_conf,
     parse_json,
 )
 
+PORT_CONFIG_SECTION = "templates"
+DEFAULT_VIEW: list[dict] = [
+    {"type": "plt", "section_name": None},
+    {"type": "pltmeta", "section_name": "plt"},
+]
+VIEW_TYPE_NAME = "type"
+VIEW_SECTION_NAME = "section_name"
+DEFAULT_RENDER_TYPE = "mustache"
 
-def build_pkg(pkg_path: str, view: VIEW, tpl_path: str, output_path: str):
-    conf = parse_json(tpl_path)
-    input = conf["input"]
-    output = conf["output"]
 
-    if isinstance(input, str):
-        input = [input]
-    if isinstance(output, str):
-        output = [output]
+def format_views(
+    views: list[dict | str] | dict | str | None,
+) -> list[tuple[str, str | None]]:
+    if isinstance(views, (dict, str)):
+        views_list = [views]
+    elif views is None:
+        views_list = DEFAULT_VIEW
+    else:
+        views_list = views
+    v: list[tuple[str, str | None]] = []
+    for i in views_list:
+        if isinstance(i, str):
+            v.append((i, None))
+        else:
+            v.append((i[VIEW_TYPE_NAME], i.get(VIEW_SECTION_NAME, None)))
+    return v
 
-    if len(input) != len(output):
-        raise ValueError(f"format error, check '{tpl_path}'")
-    for i, o in zip(input, output):
-        i = pkg_path + vreg(i, view)
-        o = output_path + vreg(o, view)
-        with open(i, "r", encoding="utf-8") as f_in:
+
+def get_plt_meta_section(plt_meta_path: str) -> VIEW:
+    plt_meta: VIEW = parse_conf(plt_meta_path)["metadata"]
+    plt_meta["theme_cap"] = plt_meta["theme"].title()
+    plt_meta["plt_cap"] = plt_meta["plt"].title()
+    return plt_meta
+
+
+def build_port(
+    p: PORT,
+    outpath: str,
+    plt_view_path: str,
+    plt_meta_path: str,
+    plts_path: str,
+    tpls_path: str,
+):
+
+    port_meta = p.meta
+    port_config = port_meta.get(PORT_CONFIG_SECTION, None)
+    if not port_config:
+        return
+
+    def get_views(types: list[tuple[str, str | None]]) -> VIEW:
+        v: VIEW = {}
+        for t, n in types:
+            view: VIEW | list = {}
+            if t == "port":
+                view = port_meta
+            elif t == "plt":
+                view = parse_json(plt_view_path)
+            elif t == "pltmeta":
+                view = get_plt_meta_section(plt_meta_path)
+            elif t == "plts":
+                view = scan_f(plts_path, ".json")
+            elif t == "ports":
+                view = scan_d(tpls_path)
+            if n or isinstance(view, list):
+                v[n] = view
+            else:
+                v = v | view
+        return v
+
+    def build(input, output, type, view) -> None:
+        with open(input, "r", encoding="utf-8") as f_in:
             data = f_in.read()
-        data = vreg(data, view)
-        with open(o, "w", encoding="utf-8") as f_out:
+        data = render(data, view, type)
+        with open(output, "w", encoding="utf-8") as f_out:
             f_out.write(data)
+
+    if isinstance(port_config, dict):
+        port_config = [port_config]
+    for conf in port_config:
+        view = format_views(conf.get("views", None))
+        view = get_views(view)
+        type = conf.get("type", DEFAULT_RENDER_TYPE)
+        input, output = p.render_io(conf["input"], conf["output"], type, view, outpath)
+        build(input, output, type, view)
 
 
 def Build(
@@ -38,6 +103,7 @@ def Build(
     plt: list[str] | bool,
     pkg_path: str | None = None,
     view_path: str | None = None,
+    meta_path: str | None = None,
     output_path: str | None = None,
 ):
     if isinstance(pkg, bool):
@@ -46,18 +112,17 @@ def Build(
         plt = scan_f(VIEW_PATH, ".json")
     pkg_path = pkg_path or PKG_ROOT
     view_path = view_path or VIEW_PATH
+    meta_path = meta_path or PLT_META_ROOT
     output_path = output_path or PKG_ROOT
 
     for _plt in plt:
-        view = view_path + "/" + _plt + ".json"
-        view = parse_json(view)
+        plt_view_path = view_path + "/" + _plt + ".json"
+        plt_meta_path = meta_path + "/" + _plt + ".ini"
         for _pkg in pkg:
             _pkg_path = pkg_path + "/" + _pkg
-            _tpl_path = _pkg_path + TPL_PATH
+            _tpl_path = _pkg_path + TPL_CONFIG_PATH
             _out_path = output_path + "/" + _pkg
-            build_pkg(_pkg_path, view, _tpl_path, _out_path)
-
-
-if __name__ == "__main__":
-    Build(["alacritty"], ["dream"])
-    pass
+            port = PORT(_pkg_path, _tpl_path)
+            build_port(
+                port, _out_path, plt_view_path, plt_meta_path, view_path, pkg_path
+            )
